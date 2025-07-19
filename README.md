@@ -10,6 +10,8 @@ link do figma: https://www.figma.com/design/KWoGZbjCK9WnC4tecBYcti/Regador-Autom
 
 ## 📸 Imagens do App
 
+Essas telas ainda não são as definitivas
+
 ### 📋 Lista de Plantas
 ![Plantas](https://github.com/eixotecnico/regador-automatico/blob/development/images-reademe/plantas.jpeg?raw=true)
 
