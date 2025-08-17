@@ -12,8 +12,6 @@
 
 ## 📸 Imagens do App
 
-Essas telas ainda não são as definitivas.
-
 ### 📭 Lista Vazia de Plantas
 ![Lista Vazia](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/plantas_vazia.jpeg?raw=true)
 
