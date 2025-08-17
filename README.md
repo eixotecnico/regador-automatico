@@ -24,6 +24,9 @@
 ### 🌡️ Informações da Planta
 ![Informações da Planta](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/info_planta.jpeg?raw=true)
 
+### 🤖 Automação da Irrigação
+![Automação](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/automacao.jpeg?raw=true)
+
 ### ⚙️ Configurações
 ![Configurações](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/configuracoes.jpeg?raw=true)
 
@@ -32,9 +35,6 @@
 
 ### ⚙️ Configuração de Notificações
 ![Configuração de Notificações](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/config_notificacoes.jpeg?raw=true)
-
-### 🤖 Automação da Irrigação
-![Automação](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/automacao.jpeg?raw=true)
 
 ### 👤 Usuário
 ![Usuário](https://github.com/eixotecnico/regador-automatico/blob/main/images-reademe/usuario.jpeg?raw=true)
