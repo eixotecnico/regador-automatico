@@ -1,4 +1,4 @@
-name: regador_automatico
+name: meu_app
 description: "Aplicativo para controle de regador automático de plantas"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -10,7 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+  firebase_core: ^3.0.0
+  cloud_firestore: ^5.0.0
+  shared_preferences: ^2.2.2
+  fl_chart: ^0.69.0
+
+
+
   # UI/UX
   cupertino_icons: ^1.0.6
   

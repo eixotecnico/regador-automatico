@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_app/screens/login_screen.dart';
 import 'adicionar_planta_screen.dart';
 import 'detalhe_planta_screen.dart';
 import 'notificacoes_screen.dart';
@@ -67,36 +68,58 @@ class _TelaPlantasState extends State<TelaPlantas> {
         ],
       ),
       drawer: Drawer(
-        backgroundColor: const Color(0xFF015A84),
-        child: Column(
+      backgroundColor: const Color(0xFF015A84),
+      child: Column(
+      children: [
+      // Cabeçalho com foto do usuário
+      UserAccountsDrawerHeader(
+        decoration: const BoxDecoration(
+          color: Color(0xFF016A9B),
+        ),
+        accountName: const Text(
+          'Usuário',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        accountEmail: const Text('usuario@email.com'),
+        currentAccountPicture: CircleAvatar(
+          radius: 40,
+          backgroundImage: const AssetImage('assets/images/perfil_padrao.png'),
+        ),
+      ),
+      // Lista de opções
+      Expanded(
+        child: ListView(
           children: [
-            const SizedBox(height: 32),
-            CircleAvatar(
-              radius: 80,
-              backgroundImage: const AssetImage('assets/images/perfil_padrao.png'),
+            ListTile(
+              leading: const Icon(Icons.settings, color: Colors.white),
+              title: const Text('Configurações', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TelaConfiguracoes()),
+                );
+              },
             ),
-            const SizedBox(height: 16),
-            const Text('Usuário', style: TextStyle(color: Colors.white, fontSize: 24)),
-            const SizedBox(height: 32),
-            Expanded(
-              child: ListView(
-                children: [
-                  ListTile(
-                    title: const Text('Configurações', style: TextStyle(color: Colors.white)),
-                    trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => const TelaConfiguracoes()),
-                      );
-                    },
-                  ),
-                ],
-              ),
+            const Divider(color: Colors.white54, thickness: 1, indent: 16, endIndent: 16),
+            ListTile(
+              leading: const Icon(Icons.logout, color: Colors.white),
+              title: const Text('Sair', style: TextStyle(color: Colors.white)),
+              onTap: () {
+                // Volta para a tela de login
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (_) => const TelaLogin()),
+                  (route) => false,
+                );
+              },
             ),
           ],
         ),
       ),
+    ],
+  ),
+),
+
       body: plantas.isEmpty
           ? const Center(
               child: Text(

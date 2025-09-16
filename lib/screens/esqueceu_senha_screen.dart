@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'plantas_screen.dart';
-import 'criar_conta_screen.dart';
-import 'esqueceu_senha_screen.dart';
 
-class TelaLogin extends StatelessWidget {
-  const TelaLogin({super.key});
+class TelaEsqueceuSenha extends StatelessWidget {
+  const TelaEsqueceuSenha({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +40,7 @@ class TelaLogin extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         const Text(
-                          "Bem-vindo de volta!",
+                          "Esqueceu a senha?",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 22,
@@ -66,44 +63,31 @@ class TelaLogin extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 16),
-
-                        TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.lock_outline),
-                            hintText: "Digite sua senha",
-                            filled: true,
-                            fillColor: const Color.fromARGB(255, 229, 229, 229),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(16),
-                              borderSide: BorderSide.none,
-                            ),
-                          ),
-                        ),
                         const SizedBox(height: 20),
 
                         SizedBox(
                           height: 50,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 40),
+                              padding: const EdgeInsets.symmetric(horizontal: 40),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(16),
                               ),
                               backgroundColor: const Color(0xFF015A84),
                             ),
                             onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => const TelaPlantas(),
+                              // Aqui você implementa a lógica de envio do e-mail
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    "Instruções enviadas para o seu e-mail",
+                                  ),
                                 ),
                               );
+                              Navigator.pop(context); // volta para login
                             },
                             child: const Text(
-                              "Entrar",
+                              "Enviar",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
@@ -114,53 +98,18 @@ class TelaLogin extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
 
-                        SizedBox(
-                        height: 50,
-                        child: OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: Color(0xFF015A84)),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                          ),
+                        TextButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => const TelaCriarConta(),
-                              ),
-                            );
+                            Navigator.pop(context); // volta para tela de login
                           },
                           child: const Text(
-                            "Criar conta",
+                            "Voltar ao login",
                             style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xFF015A84),
+                              color: Colors.grey,
+                              fontSize: 14,
                             ),
                           ),
                         ),
-                      ),
-
-
-                        TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const TelaEsqueceuSenha(),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          "Esqueceu a senha?",
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-
                       ],
                     ),
                   ),
